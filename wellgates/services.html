@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Wellgates loan services — personal, business, and emergency loans with clear terms." />
+    <title>Services | Wellgates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          Wellgates
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" aria-current="page">Services</a></li>
+            <li><a href="calculator.html">Loan Calculator</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section--tight" aria-labelledby="page-title">
+        <div class="container">
+          <h1 id="page-title">Our services</h1>
+          <p>Loan products designed for real-life goals — with rates and terms explained upfront.</p>
+        </div>
+      </section>
+
+      <section class="section section--light services-section" aria-labelledby="services-grid-title">
+        <div class="container">
+          <h2 class="section-title" id="services-grid-title">Lending solutions</h2>
+          <p class="section-sub">Three focused products — each with clear pricing, flexible terms, and support from a dedicated loan officer.</p>
+          <div class="card-grid card-grid--3 services-grid">
+            <article class="card service-card">
+              <div class="card-icon card-icon--svg" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <h3>Personal loans</h3>
+              <p>
+                Borrow for home projects, education, or consolidating higher-rate debt — with fixed monthly payments and terms that fit your budget.
+              </p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon card-icon--svg" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3>Business loans</h3>
+              <p>
+                Working capital, equipment, and expansion financing for small businesses — we review your cash flow and goals to structure a sensible repayment plan.
+              </p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon card-icon--svg" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3>Emergency loans</h3>
+              <p>
+                When the unexpected hits — medical bills, urgent repairs, or a short-term gap — fast decisions and straightforward terms so you can stabilize and move forward.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band" aria-labelledby="cta-title">
+        <div class="container">
+          <h2 id="cta-title">Not sure which product fits?</h2>
+          <p>Schedule a short call — we will walk through options without pressure.</p>
+          <a class="btn btn-primary btn-lg" href="contact.html">Contact us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="index.html">
+              Wellgates
+            </a>
+            <p>Responsible lending with an olive-branch mindset: growth that lasts.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="calculator.html">Loan Calculator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Sign in</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="index.html#privacy">Privacy</a></li>
+              <li><a href="index.html#terms">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-bottom">© <span id="year"></span> Wellgates. Demo website for educational purposes.</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
+
+# Node / web tooling (safe defaults)
+node_modules/
+dist/
+build/
+.parcel-cache/
+.vite/
+
+# IDE
+.vscode/
+.idea/
+

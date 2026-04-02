@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Estimate your monthly loan payment with the Wellgates loan calculator." />
+    <title>Loan Calculator | Wellgates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          Wellgates
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="calculator.html" aria-current="page">Loan Calculator</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section--tight" aria-labelledby="page-title">
+        <div class="container">
+          <h1 id="page-title">Loan calculator</h1>
+          <p>Enter your loan amount, annual interest rate, and term in months — your estimated payment updates as you type.</p>
+        </div>
+      </section>
+
+      <section class="section calculator-section" aria-labelledby="calc-heading">
+        <div class="container">
+          <h2 class="visually-hidden" id="calc-heading">Payment calculator</h2>
+          <div class="calculator-layout">
+            <article class="calc-card calc-card--inputs">
+              <header class="calc-card-header">
+                <h3 class="calc-card-title">Loan details</h3>
+                <p class="calc-card-desc">All fields are required for an estimate. No page refresh needed.</p>
+              </header>
+              <form class="calc-form-inner" id="loan-calculator-form" novalidate>
+                <div class="calc-field">
+                  <label for="loan-amount">Loan amount</label>
+                  <div class="calc-input-affix">
+                    <span class="calc-affix" aria-hidden="true">$</span>
+                    <input
+                      type="number"
+                      id="loan-amount"
+                      name="loan-amount"
+                      min="0"
+                      step="100"
+                      value="25000"
+                      inputmode="decimal"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+                <div class="calc-field-row">
+                  <div class="calc-field">
+                    <label for="annual-rate">Interest rate (annual)</label>
+                    <div class="calc-input-affix calc-input-affix--end">
+                      <input
+                        type="number"
+                        id="annual-rate"
+                        name="annual-rate"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        value="8.5"
+                        inputmode="decimal"
+                        autocomplete="off"
+                      />
+                      <span class="calc-affix" aria-hidden="true">%</span>
+                    </div>
+                  </div>
+                  <div class="calc-field">
+                    <label for="loan-months">Loan duration</label>
+                    <div class="calc-input-affix calc-input-affix--end">
+                      <input
+                        type="number"
+                        id="loan-months"
+                        name="loan-months"
+                        min="1"
+                        max="600"
+                        step="1"
+                        value="60"
+                        inputmode="numeric"
+                        autocomplete="off"
+                      />
+                      <span class="calc-affix calc-affix--muted" aria-hidden="true">mo</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="calc-form-hint">Results are estimates only — not an offer of credit.</p>
+              </form>
+            </article>
+
+            <div class="calc-results-column">
+              <article class="calc-card calc-card--payment" aria-live="polite" aria-atomic="true">
+                <p class="calc-payment-label">Estimated monthly payment</p>
+                <p class="calc-payment-value" id="monthly-payment">$0.00</p>
+                <p class="calc-payment-note">Fixed-rate amortizing loan</p>
+              </article>
+
+              <article class="calc-card calc-card--summary">
+                <h3 class="calc-summary-title">Loan summary</h3>
+                <ul class="calc-summary-list">
+                  <li>
+                    <span class="calc-summary-label">Total repayment</span>
+                    <span class="calc-summary-value" id="total-payment">$0.00</span>
+                  </li>
+                  <li>
+                    <span class="calc-summary-label">Total interest</span>
+                    <span class="calc-summary-value" id="total-interest">$0.00</span>
+                  </li>
+                </ul>
+                <p class="calc-disclaimer">
+                  Assumes equal monthly payments at the stated annual rate for the full term. Fees, taxes, and insurance are not included.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="index.html">
+              Wellgates
+            </a>
+            <p>Responsible lending with an olive-branch mindset: growth that lasts.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="calculator.html">Loan Calculator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Sign in</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="index.html#privacy">Privacy</a></li>
+              <li><a href="index.html#terms">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-bottom">© <span id="year"></span> Wellgates. Demo website for educational purposes.</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

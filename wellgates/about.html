@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn about Wellgates — our mission, team, and commitment to fair lending." />
+    <title>About | Wellgates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          Wellgates
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="calculator.html">Loan Calculator</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section--tight" aria-labelledby="page-title">
+        <div class="container">
+          <h1 id="page-title">About Wellgates</h1>
+          <p>We believe access to fair credit opens doors — for families, small businesses, and communities.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container prose">
+          <h2>Our story</h2>
+          <p>
+            Wellgates was founded on a simple idea: lending should feel like a partnership, not a puzzle. Our name reflects openness — a gate that welcomes responsible borrowers and supports them with tools, education, and respectful service.
+          </p>
+          <p>
+            Today we serve clients nationwide with a blend of modern technology and experienced loan officers. Whether you are consolidating debt, buying a vehicle, or investing in your business, we work to structure loans that fit your budget and timeline.
+          </p>
+          <h2>What we stand for</h2>
+          <ul class="values-list">
+            <li><strong>Transparency</strong> — You receive a clear breakdown of rates, fees, and payment schedules before you commit.</li>
+            <li><strong>Responsibility</strong> — We assess affordability carefully to help you borrow sustainably.</li>
+            <li><strong>Respect</strong> — Your time and questions matter. We respond promptly and explain terms in plain language.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="card-grid card-grid--2">
+            <article class="card">
+              <h3>Leadership</h3>
+              <p>Our leadership team combines decades of banking experience with a focus on inclusive, compliant lending practices.</p>
+            </article>
+            <article class="card">
+              <h3>Community</h3>
+              <p>We support local financial literacy programs and partner with nonprofits that help families build credit responsibly.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="index.html">
+              Wellgates
+            </a>
+            <p>Responsible lending with an olive-branch mindset: growth that lasts.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="calculator.html">Loan Calculator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Sign in</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="index.html#privacy">Privacy</a></li>
+              <li><a href="index.html#terms">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-bottom">© <span id="year"></span> Wellgates. Demo website for educational purposes.</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
