@@ -1514,3 +1514,11 @@ main {
     padding: 0 0.85rem;
   }
 }
+
+
+/* Logo styles */
+.site-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+}
