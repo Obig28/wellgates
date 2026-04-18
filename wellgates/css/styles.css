@@ -7,9 +7,9 @@
   --olive-600: #20481c;
   --olive-500: #204c20;
   --olive-400: #244c20;
-  --white: #ffffff;
+  --white: #aab3af;
   --cream: #f4f8f4;
-  --surface: #ffffff;
+  --surface: #aab3af;
   --muted: #5c6350;
   --muted-soft: #6b7260;
   --shadow-xs: 0 1px 2px rgba(32, 72, 32, 0.05);
@@ -93,7 +93,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(170, 179, 175, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(91, 107, 58, 0.1);
@@ -421,7 +421,7 @@ main {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(ellipse 120% 80% at 100% -20%, rgba(255, 255, 255, 0.14), transparent 55%),
+    radial-gradient(ellipse 120% 80% at 100% -20%, rgba(170, 179, 175, 0.14), transparent 55%),
     radial-gradient(ellipse 60% 50% at 0% 100%, rgba(138, 154, 101, 0.2), transparent 45%);
   pointer-events: none;
 }
@@ -431,8 +431,8 @@ main {
   position: absolute;
   inset: 0;
   opacity: 0.4;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(170, 179, 175, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(170, 179, 175, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
   mask-image: linear-gradient(180deg, black 30%, transparent 95%);
@@ -491,11 +491,11 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.95);
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  color: rgba(170, 179, 175, 0.95);
+  background: linear-gradient(135deg, rgba(170, 179, 175,0.2), rgba(170, 179, 175,0.05));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(170, 179, 175, 0.28);
   border-radius: var(--radius-smooth);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -511,7 +511,7 @@ main {
 
 .lead {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(170, 179, 175, 0.92);
   margin: 0 0 2rem;
   line-height: 1.7;
   font-weight: 400;
@@ -526,7 +526,7 @@ main {
   padding: 0;
   list-style: none;
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(170, 179, 175, 0.9);
   letter-spacing: -0.01em;
 }
 
@@ -584,21 +584,21 @@ main {
 }
 
 .btn-outline {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(170, 179, 175, 0.08);
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(170, 179, 175, 0.55);
   backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(170, 179, 175, 0.22);
   border-color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.95);
+  outline: 2px solid rgba(170, 179, 175, 0.95);
   outline-offset: 3px;
 }
 
@@ -609,20 +609,20 @@ main {
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(170, 179, 175, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: calc(var(--radius) + 8px);
   padding: clamp(1.85rem, 3.5vw, 2.5rem);
-  border: 1px solid rgba(255, 255, 255, 1);
-  box-shadow: 0 24px 64px rgba(24, 54, 24, 0.4), inset 0 1px 0 rgba(255,255,255,1);
+  border: 1px solid rgba(170, 179, 175, 1);
+  box-shadow: 0 24px 64px rgba(24, 54, 24, 0.4), inset 0 1px 0 rgba(170, 179, 175,1);
   color: var(--olive-900);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .hero-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 32px 72px rgba(24, 54, 24, 0.48), inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow: 0 32px 72px rgba(24, 54, 24, 0.48), inset 0 1px 0 rgba(170, 179, 175,1);
 }
 
 .hero-card h2 {
@@ -783,7 +783,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 55%);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(170, 179, 175, 0.08), transparent 55%);
   pointer-events: none;
 }
 
@@ -1032,7 +1032,7 @@ main {
   color: var(--white);
   padding: 2rem 1.75rem;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(170, 179, 175, 0.12);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1394,7 +1394,7 @@ main {
 /* Footer */
 .site-footer {
   background: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(170, 179, 175, 0.85);
   padding: 3rem 0 1.5rem;
   margin-top: auto;
 }
@@ -1438,7 +1438,7 @@ main {
 }
 
 .site-footer a {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(170, 179, 175, 0.88);
   display: inline-block;
   padding: 0.25rem 0;
   font-size: 0.95rem;
@@ -1451,7 +1451,7 @@ main {
 .footer-bottom {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(170, 179, 175, 0.12);
   font-size: 0.85rem;
   text-align: center;
   opacity: 0.75;
@@ -1546,7 +1546,7 @@ main {
 
 /* Keep header frosty but slightly more transparent */
 .site-header {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(170, 179, 175, 0.05) !important;
 }
 
 /* Make stats transparent */
@@ -1555,6 +1555,6 @@ main {
 }
 h1, h2, h3, h4, h5, h6, .prose h2, .legal-block h2 { color: var(--cream); }
 
-.prose p, .legal-block p, .prose li, .legal-block li, .values-list li { color: rgba(255, 255, 255, 0.85) !important; }
+.prose p, .legal-block p, .prose li, .legal-block li, .values-list li { color: rgba(170, 179, 175, 0.85) !important; }
 .prose strong, .legal-block strong, .values-list strong { color: var(--white) !important; }
 
