@@ -484,30 +484,32 @@ main {
   align-items: center;
   gap: 0.5rem;
   margin: 0 0 1.25rem;
-  padding: 0.4rem 0.95rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  padding: 0.45rem 1rem;
+  font-size: 0.7825rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.95);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius-smooth);
-  box-shadow: var(--shadow-xs);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-home h1 {
   font-size: clamp(2.35rem, 5vw, 3.35rem);
   font-weight: 700;
   letter-spacing: -0.045em;
-  line-height: 1.08;
+  line-height: 1.15;
   margin: 0 0 1.25rem;
   text-wrap: balance;
 }
 
 .lead {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   margin: 0 0 2rem;
   line-height: 1.7;
   font-weight: 400;
@@ -516,29 +518,20 @@ main {
 
 .hero-trust {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin: 2rem 0 0;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 2.25rem 0 0;
   padding: 0;
   list-style: none;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: -0.01em;
 }
 
 .hero-trust li {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
-}
-
-.hero-trust li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
-  flex-shrink: 0;
+  gap: 0.65rem;
 }
 
 .btn {
@@ -589,17 +582,17 @@ main {
 }
 
 .btn-outline {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline:focus-visible {
@@ -610,31 +603,46 @@ main {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .hero-card {
-  background: var(--surface);
-  border-radius: calc(var(--radius) + 4px);
-  padding: clamp(1.5rem, 3vw, 2rem);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: calc(var(--radius) + 8px);
+  padding: clamp(1.85rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 24px 64px rgba(24, 54, 24, 0.4), inset 0 1px 0 rgba(255,255,255,1);
   color: var(--olive-900);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .hero-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 72px rgba(47, 56, 32, 0.16);
+  transform: translateY(-6px);
+  box-shadow: 0 32px 72px rgba(24, 54, 24, 0.48), inset 0 1px 0 rgba(255,255,255,1);
 }
 
 .hero-card h2 {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-soft);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--olive-600);
+  border-radius: 2px;
 }
 
 .stat-row {
@@ -642,9 +650,9 @@ main {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(91, 107, 58, 0.1);
-  font-size: 0.9375rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(91, 107, 58, 0.12);
+  font-size: 0.95rem;
   color: var(--muted);
 }
 
