@@ -1558,3 +1558,7 @@ h1, h2, h3, h4, h5, h6, .prose h2, .legal-block h2 { color: var(--cream); }
 .prose p, .legal-block p, .prose li, .legal-block li, .values-list li { color: rgba(170, 179, 175, 0.85) !important; }
 .prose strong, .legal-block strong, .values-list strong { color: var(--white) !important; }
 
+
+/* Explicitly enforce pure white for all major section titles */
+.section-title { color: #ffffff !important; }
+
