@@ -22,7 +22,7 @@
   --radius-sm: 10px;
   --radius-smooth: 999px;
   --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --header-h: 76px;
+  --header-h: 96px;
   --space-section: clamp(3rem, 6vw, 5rem);
 }
 
@@ -129,9 +129,11 @@ a:hover {
 }
 
 .site-logo {
-  max-height: 64px;
-  width: auto;
+  width: 220px;
+  height: auto;
+  max-height: none;
   object-fit: contain;
+  margin-top: 4px;
 }
 
 .nav-toggle {
