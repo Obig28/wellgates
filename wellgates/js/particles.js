@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container.style.zIndex = '-1';
       container.style.pointerEvents = 'none';
       container.style.overflow = 'hidden';
+      container.style.background = 'radial-gradient(ellipse at center, #1e3820 0%, #0d1a0e 100%)';
       document.body.appendChild(container);
     }
 

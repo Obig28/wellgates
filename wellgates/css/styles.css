@@ -42,8 +42,8 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: -0.011em;
-  color: var(--olive-900);
-  background: var(--cream);
+  color: var(--cream);
+  background: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -218,7 +218,7 @@ main {
 }
 
 .section--light {
-  background: var(--surface);
+  background: transparent;
   border-top: 1px solid rgba(91, 107, 58, 0.07);
   border-bottom: 1px solid rgba(91, 107, 58, 0.07);
   box-shadow: var(--shadow-xs);
@@ -409,7 +409,7 @@ main {
 }
 
 .page-hero {
-  background: linear-gradient(155deg, var(--olive-900) 0%, var(--olive-700) 42%, var(--olive-600) 100%);
+  background: transparent;
   color: var(--white);
   padding: 3.5rem 0 3.25rem;
   position: relative;
@@ -771,7 +771,7 @@ main {
 
 /* CTA band */
 .cta-band {
-  background: linear-gradient(165deg, var(--olive-800) 0%, var(--olive-900) 100%);
+  background: transparent;
   color: var(--white);
   padding: clamp(3rem, 6vw, 4rem) 0;
   text-align: center;
@@ -1393,7 +1393,7 @@ main {
 
 /* Footer */
 .site-footer {
-  background: var(--olive-900);
+  background: transparent;
   color: rgba(255, 255, 255, 0.85);
   padding: 3rem 0 1.5rem;
   margin-top: auto;
@@ -1532,4 +1532,29 @@ main {
 }
 
 
+
+
+
+/* --- Global Dark Mode Transparency Overrides --- */
+.card, .testimonial-card, .faq-item, .contact-info, .contact-form, .login-card, .calc-card--inputs, .calc-card--summary {
+  color: var(--olive-900) !important;
+}
+.card h2, .card h3, .card h4, .testimonial-card h3, .faq-question, .contact-info h2, .contact-info h3, .contact-form h2, .login-card h2, .calc-card--inputs h2, .calc-card--inputs h3, .calc-card--summary h2 {
+  color: var(--olive-900) !important;
+}
+.faq-question { color: var(--olive-900) !important; background: var(--cream) !important; }
+
+/* Keep header frosty but slightly more transparent */
+.site-header {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Make stats transparent */
+.hero-card {
+  color: var(--olive-900);
+}
+h1, h2, h3, h4, h5, h6, .prose h2, .legal-block h2 { color: var(--cream); }
+
+.prose p, .legal-block p, .prose li, .legal-block li, .values-list li { color: rgba(255, 255, 255, 0.85) !important; }
+.prose strong, .legal-block strong, .values-list strong { color: var(--white) !important; }
 
