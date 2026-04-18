@@ -1,15 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById('particles-container');
-    if (!container) return;
+    let container = document.getElementById('particles-container');
+    
+    // If container doesn't exist, create it across the whole viewport automatically
+    if (!container) {
+      container = document.createElement("div");
+      container.id = 'particles-container';
+      container.style.position = 'fixed';
+      container.style.inset = '0';
+      container.style.zIndex = '-1';
+      container.style.pointerEvents = 'none';
+      container.style.overflow = 'hidden';
+      document.body.appendChild(container);
+    }
 
     const width = container.clientWidth;
     const height = container.clientHeight;
     const color = "#8a9a65"; // Wellgates olive/gold complementary color
-    const count = 60;
+    const count = 180; // Increased count for density across full screen
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.z = 30;
+    camera.position.z = 40; // Pulled back slightly for a wider web
 
     let renderer;
     try {
@@ -33,26 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const originalPositions = [];
 
     for (let i = 0; i < count; i++) {
-      const x = (Math.random() - 0.5) * 60;
-      const y = (Math.random() - 0.5) * 40;
-      const z = (Math.random() - 0.5) * 30;
+      const x = (Math.random() - 0.5) * 80; // Wider spawn area
+      const y = (Math.random() - 0.5) * 60;
+      const z = (Math.random() - 0.5) * 40;
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
       originalPositions.push({ x, y, z });
       velocities.push({
-        x: (Math.random() - 0.5) * 0.05,
-        y: (Math.random() - 0.5) * 0.05,
-        z: (Math.random() - 0.5) * 0.05,
+        x: (Math.random() - 0.5) * 0.1, // More initial movement
+        y: (Math.random() - 0.5) * 0.1,
+        z: (Math.random() - 0.5) * 0.1,
       });
     }
 
     geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const material = new THREE.PointsMaterial({
       color: new THREE.Color(color),
-      size: 0.4,
+      size: 0.45,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.85,
     });
     const particles = new THREE.Points(geometry, material);
     scene.add(particles);
@@ -60,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lineMaterial = new THREE.LineBasicMaterial({
       color: new THREE.Color(color),
       transparent: true,
-      opacity: 0.15,
+      opacity: 0.18,
     });
     const linesGeometry = new THREE.BufferGeometry();
     const lines = new THREE.LineSegments(linesGeometry, lineMaterial);
@@ -94,34 +105,40 @@ document.addEventListener("DOMContentLoaded", () => {
       const time = performance.now() * 0.001;
       const positionsAttr = particles.geometry.attributes.position.array;
       
-      const mouseEffectX = mouseX * 15 + Math.sin(time * 0.5) * 1.5; 
-      const mouseEffectY = mouseY * 10 + Math.cos(time * 0.3) * 1.5;
+      const mouseEffectX = mouseX * 35 + Math.sin(time * 0.8) * 2.5; 
+      const mouseEffectY = mouseY * 25 + Math.cos(time * 0.6) * 2.5;
 
       for (let i = 0; i < count; i++) {
-        const targetX = originalPositions[i].x + mouseEffectX;
-        const targetY = originalPositions[i].y + mouseEffectY;
-        const targetZ = originalPositions[i].z;
+        // Individual unpredictable wandering
+        const wanderX = Math.sin(time * 1.5 + i) * 1.2;
+        const wanderY = Math.cos(time * 1.2 + i * 2) * 1.2;
+
+        const targetX = originalPositions[i].x + mouseEffectX + wanderX;
+        const targetY = originalPositions[i].y + mouseEffectY + wanderY;
+        const targetZ = originalPositions[i].z + Math.sin(time + i) * 1.5;
         
         const dx = targetX - positionsAttr[i * 3];
         const dy = targetY - positionsAttr[i * 3 + 1];
         const dz = targetZ - positionsAttr[i * 3 + 2];
         
-        velocities[i].x += dx * 0.0008;
-        velocities[i].y += dy * 0.0008;
-        velocities[i].z += dz * 0.0008;
+        // Increased tension (snappier response to mouse)
+        velocities[i].x += dx * 0.003;
+        velocities[i].y += dy * 0.003;
+        velocities[i].z += dz * 0.003;
 
         positionsAttr[i * 3] += velocities[i].x;
         positionsAttr[i * 3 + 1] += velocities[i].y;
         positionsAttr[i * 3 + 2] += velocities[i].z;
 
-        velocities[i].x *= 0.95;
-        velocities[i].y *= 0.95;
-        velocities[i].z *= 0.95;
+        // Less friction = bouncier, more lively movement
+        velocities[i].x *= 0.92;
+        velocities[i].y *= 0.92;
+        velocities[i].z *= 0.92;
       }
       particles.geometry.attributes.position.needsUpdate = true;
       
       const linePositions = [];
-      const connectDistance = 9;
+      const connectDistance = 11;
       for (let i = 0; i < count; i++) {
         for (let j = i + 1; j < count; j++) {
           const dx = positionsAttr[i * 3] - positionsAttr[j * 3];
@@ -146,8 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
         new THREE.Float32BufferAttribute(linePositions, 3)
       );
 
-      scene.rotation.x += (mouseY * 0.1 - scene.rotation.x) * 0.05;
-      scene.rotation.y += (mouseX * 0.1 - scene.rotation.y) * 0.05;
+      scene.rotation.x += (mouseY * 0.15 - scene.rotation.x) * 0.08;
+      scene.rotation.y += (mouseX * 0.15 - scene.rotation.y) * 0.08;
 
       renderer.render(scene, camera);
     };
