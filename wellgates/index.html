@@ -36,8 +36,9 @@
     </header>
 
     <main id="main">
-      <section class="page-hero hero-home" aria-labelledby="hero-heading">
-        <div class="container">
+      <section class="page-hero hero-home" aria-labelledby="hero-heading" style="position: relative; z-index: 1;">
+        <div id="particles-container" style="position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;"></div>
+        <div class="container" style="position: relative; z-index: 10;">
           <div class="hero-grid">
             <div class="hero-copy">
               <p class="hero-eyebrow">Lending · Simple · Transparent</p>
@@ -257,6 +258,8 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
   </body>
 </html>
