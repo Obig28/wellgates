@@ -128,6 +128,12 @@ a:hover {
   gap: 0.5rem;
 }
 
+.site-logo {
+  max-height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
