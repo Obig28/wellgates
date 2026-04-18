@@ -1544,9 +1544,9 @@ main {
 }
 .faq-question { color: var(--olive-900) !important; background: var(--cream) !important; }
 
-/* Keep header frosty but slightly more transparent */
+/* Change the navbar to exact solid color specified by user */
 .site-header {
-  background: rgba(170, 179, 175, 0.05) !important;
+  background: #aab3af !important;
 }
 
 /* Make stats transparent */
